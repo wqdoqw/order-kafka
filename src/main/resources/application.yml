@@ -1,0 +1,33 @@
+server:
+  port: 8080
+
+spring:
+  kafka:
+    bootstrap-servers: localhost:9092
+    consumer:
+      group-id: order-consumer-group
+      auto-offset-reset: latest
+
+  datasource:
+    url: jdbc:h2:mem:kafkadb;MODE=MYSQL;DB_CLOSE_DELAY=-1
+    driver-class-name: org.h2.Driver
+    username: sa
+    password:
+
+  jpa:
+    hibernate:
+      ddl-auto: create
+    properties:
+      hibernate:
+        format_sql: true
+
+  h2:
+    console:
+      enabled: true
+      path: /h2-console
+
+app:
+  kafka:
+    topics:
+      order-created: order.created.v1
+      order-created-dlq: order.created.v1.dlq
