@@ -1,4 +1,3 @@
-@ -0,0 +1,168 @@
 # 주문 이벤트 (Kafka) — 재시도 & DLQ 예제
 
 이 프로젝트는 Spring Boot와 Kafka를 사용하여 이벤트 발행, 소비, 실패 시 재시도(Retry), DLQ(Dead Letter Queue) 처리 흐름을 구현한 샘플입니다.
